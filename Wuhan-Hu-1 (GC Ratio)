@@ -1,0 +1,25 @@
+#counting Nucleotide frequency of a given Wuhan seafood market pneumonia virus isolate Wuhan-Hu-1, complete genome sample
+#NCBI Reference Sequence: NC_045512.2
+DNA = open("sequence.fasta", "r")
+content = DNA.read()
+
+def gcRatio(g,c,t,a):
+    x = (g + c) / (g + c + t + a)
+    return x
+
+A = content.count("A")
+T = content.count("T")
+C = content.count("C")
+G = content.count("G")
+print("number of A in your sequance is : ", A)
+print("number of T in your sequance is : ", T)
+print("number of C in your sequance is : ", C)
+print("number of G in your sequance is : ", G)
+ratioGC = gcRatio(G, C, T, A)
+print("the GC ratio of your DNA sequence is : ", ratioGC)
+
+#number of A in your sequance is :  8954
+#number of T in your sequance is :  9594
+#number of C in your sequance is :  5493
+#number of G in your sequance is :  5863
+#the GC ratio of your DNA sequence is :  0.37974852862493313
